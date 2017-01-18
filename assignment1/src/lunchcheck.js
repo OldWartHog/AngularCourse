@@ -1,7 +1,6 @@
 (function() {
   'use strict';
 
-
   angular.module('LunchCheck', [])
   .controller('LunchController', LunchController);
 
@@ -16,20 +15,40 @@ function LunchController($scope) {
 
      if (validateInput($scope.lunchText)) {
        var itemCount = countItems($scope.lunchText);
-       $scope.lunchColor = 'green';
-       $scope.lunchComment = outputComment(itemCount);
+       if (itemCount == 0) {
+         $scope.outputError("you seem to have only typed commas, please supply some data");
+         return;
+       }
+       var comment = computeComment(itemCount);
+       $scope.outputComment(comment);
      } else {
-       $scope.lunchColor = 'red';
-       $scope.lunchComment = "Please enter some data.";
+       $scope.outputError("Please enter some data");
      }
   }
+
+  $scope.outputComment = function(comment) {
+    $scope.lunchColor = 'green';
+    $scope.lunchComment = comment;
+  }
+
+  $scope.outputError = function(errorText) {
+    $scope.lunchColor = 'red';
+    $scope.lunchComment = errorText;
+  }
+
 }
 
+// in a more complex example these would be in a separate file.
 function validateInput(text) {
-  if (text == undefined ||  text.length == 0) {
-    return false;
+  return text != undefined &&  text.length > 0;
+}
+
+function computeComment(itemCount) {
+  if (itemCount > 3) {
+    return "Too much!";
+  } else {
+    return "Enjoy!";
   }
-  return true;
 }
 
 function countItems(text) {
@@ -41,15 +60,6 @@ function countItems(text) {
     }
   }
   return count;
-}
-
-function outputComment(itemCount) {
-  if (itemCount > 3) {
-    return "Too much!";
-  } else {
-    return "Enjoy!";
-  }
-
 }
 
 }());
