@@ -5,4 +5,4 @@ Learning Angular
 [The Lunch Checker](https://oldwarthog.github.io/AngularCourse/assignment1/src/index.html)
 
 ## Assignment 2
-[The Shopping Trip Tracker](https://oldwarthog.github.io/AngularCourse/assignment2/src/index.html)
+[The Shopping Trip Tracker](https://oldwarthog.github.io/AngularCourse/assignment2/index.html)
