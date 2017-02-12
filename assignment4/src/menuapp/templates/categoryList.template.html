@@ -1,7 +1,11 @@
-Here are the categories
+Please select from any of the following sections:
+
+<hr>
 <ul>
   <li ng-repeat="item in categories.items"
       ui-sref="itemList({categoryShortname: item.short_name})">
     {{ item.short_name }}:<b>{{ item.name }}</b> : <i>{{ item.special_instructions }}</i>
   </li>
 </ul>
+
+<hr>

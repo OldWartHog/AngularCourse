@@ -1,12 +1,14 @@
 <a ui-sref="main">Home</a> &lt;
-<a ui-sref="categories">Categories</a> &lt;
+<a ui-sref="categories">Sections</a> &lt;
 
 <hr>
-Options in {{ menuItems.category.name }}
+Choices in {{ menuItems.category.name }}
 <span class="note"> {{ menuItems.category.special_instructions }} </span>
 
 <ul>
   <li ng-repeat="item in menuItems.items">
-    <b>{{ item.name }}</b> - <i>{{ item.description }}</i> - {{ item.price_small }} {{ item.price_large }} ( {{ item.short_name }} )
+    <b>{{ item.name }}</b> - <i>{{ item.description }}</i> - ${{ item.price_small }} {{ item.price_large }} ( {{ item.short_name }} )
   </li>
 </ul>
+
+<hr>
