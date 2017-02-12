@@ -1,0 +1,7 @@
+li[ui-sref]:hover {
+    display: inline-block;
+    cursor: pointer;
+    border: solid red 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
