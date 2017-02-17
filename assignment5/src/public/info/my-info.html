@@ -1,0 +1,20 @@
+<h1> Your details </h1>
+
+
+<div ng-if=" ! infoCtrl.hasData()">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+</div>
+
+<div class="narrow" ng-if="infoCtrl.hasData()">
+
+<span class="something"> Name: {{ infoCtrl.myInfo.firstname }} {{ infoCtrl.myInfo.lastname }}</span>
+<br>
+<span class="something">Phone: {{ infoCtrl.myInfo.phone }} </span>
+<br>
+<span class="something">eMail: {{ infoCtrl.myInfo.email }} </span>
+<br>
+<span class="something">Your favorite Dish: {{ infoCtrl.myInfo.favorite }} {{ infoCtrl.myInfo.favoritename }}</span>
+<img ng-src="{{infoCtrl.apibase}}/images/{{infoCtrl.myInfo.favorite}}.jpg" alt="{{ infoCtrl.myInfo.favorite }}"/>
+
+</div>
+
